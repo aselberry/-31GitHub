@@ -1,0 +1,26 @@
+So, to use stack in Java you need to declare Stack as a  variable.  It is very similar to the ArrayList declaration. You also need to import Stack library with the help of `import java.util.Stack` 
+
+import java.util.Stack;
+
+class HelloWorld {
+public static void main(String[] args) {
+Stack<String> learn = new Stack<String>();
+String[] learning = {"apple", "cherry", "speech", "Student"};
+for(String str : learning){
+learn.push(str);
+}
+
+    System.out.println(learn.pop());
+    System.out.println(learn.pop());
+    System.out.println(learn.pop());
+    System.out.println(learn.pop());
+}
+
+}
+
+OUTPUT: 
+
+Student
+speech
+cherry
+apple
