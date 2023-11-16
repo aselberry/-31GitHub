@@ -1,0 +1,35 @@
+from collections import defaultdict
+
+class Graph:
+    def __init__(self, vertices):
+        self.vertices = vertices
+        self.graph = defaultdict(list)
+
+    def add_edge(self, u, v):
+        self.graph[u].append(v)
+
+    def dfs(self, u, visited, parent, stack):
+        visited[u] = True
+        stack.append(u)
+
+        for v in self.graph[u]:
+            if not visited[v]:
+                self.dfs(v, visited, u, stack)
+            elif parent != v:
+                
+                print_loop(stack, v)
+
+        stack.pop()
+
+    def find_loops(self):
+        visited = [False] * self.vertices
+
+        for i in range(self.vertices):
+            if not visited[i]:
+                stack = []
+                self.dfs(i, visited, -1, stack)
+
+def print_loop(stack, v):
+    index = stack.index(v)
+    loop = stack[index:]
+    print("Loop:", "->".join(map(str, loop)))
