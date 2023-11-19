@@ -9,7 +9,7 @@ class SetPractice{
         String searchedName = "";
         System.out.println("Enter the name of the participant: ");
         for(int i=0; i<6; i++){
-            
+              
             names.add(scanner.nextLine().toLowerCase());
         }
 
