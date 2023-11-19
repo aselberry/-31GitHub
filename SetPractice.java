@@ -6,7 +6,7 @@ class SetPractice{
         HashSet<String> names = new HashSet<String>();
         Scanner scanner = new Scanner(System.in);
         Scanner opt = new Scanner(System.in);
-        String searchedName = "";
+        String searchedName = ""; 
         System.out.println("Enter the name of the participant: ");
         for(int i=0; i<6; i++){
               
