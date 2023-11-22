@@ -1,0 +1,8 @@
+So basically in Jav access modifiers are the ones that determine whether the variables/instant variables are 
+**`private`** or **`public`**. When instant variable of the parent class set to private, it cannot be accessed 
+or modified by the child class. To enable this option for the child is to use **`protected`** access modifier keyword. 
+
+So, when do we use **`final` f**or method in parent class? When we want to ensure that any child of this class cannot 
+modify the result or return value of this method. According to the CodeAcademy, it allows to avoid some bags that might
+happen when in some child we want to change something. There is no specific order of writing final keyword to the method.
+But it is recommended to wrote **`public final`** instead of `**final public**`.
