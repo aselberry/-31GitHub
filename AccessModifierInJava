@@ -6,3 +6,4 @@ So, when do we use **`final` f**or method in parent class? When we want to ensur
 modify the result or return value of this method. According to the CodeAcademy, it allows to avoid some bags that might
 happen when in some child we want to change something. There is no specific order of writing final keyword to the method.
 But it is recommended to wrote **`public final`** instead of `**final public**`.
+   
