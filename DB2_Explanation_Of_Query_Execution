@@ -1,0 +1,45 @@
+Plan hash value: 3038175709
+ 
+----------------------------------------------------------------------------------------------
+| Id  | Operation                      | Name        | Rows  | Bytes | Cost (%CPU)| Time     |
+----------------------------------------------------------------------------------------------
+|   0 | SELECT STATEMENT               |             |     4 |   104 |     8   (0)| 00:00:01 |
+|*  1 |  HASH JOIN SEMI                |             |     4 |   104 |     8   (0)| 00:00:01 |
+|   2 |   TABLE ACCESS FULL            | MY_DEPT     |     5 |    65 |     3   (0)| 00:00:01 |
+|   3 |   VIEW                         | VW_NSO_1    |    10 |   130 |     5   (0)| 00:00:01 |
+|   4 |    NESTED LOOPS                |             |    10 |   170 |     5   (0)| 00:00:01 |
+|   5 |     NESTED LOOPS               |             |    10 |   170 |     5   (0)| 00:00:01 |
+|*  6 |      TABLE ACCESS FULL         | MY_SAL_CAT  |     1 |    10 |     3   (0)| 00:00:01 |
+|*  7 |      INDEX RANGE SCAN          | EMP_SAL_IND |     9 |       |     1   (0)| 00:00:01 |
+|   8 |     TABLE ACCESS BY INDEX ROWID| MY_EMP      |    10 |    70 |     2   (0)| 00:00:01 |
+----------------------------------------------------------------------------------------------
+ 
+Query Block Name / Object Alias (identified by operation id):
+-------------------------------------------------------------
+ 
+   1 - SEL$B33ECFE6
+   2 - SEL$B33ECFE6 / MY_DEPT@SEL$2
+   3 - SEL$101C0EA9 / VW_NSO_1@SEL$B33ECFE6
+   4 - SEL$101C0EA9
+   6 - SEL$101C0EA9 / MY_SAL_CAT@SEL$1
+   7 - SEL$101C0EA9 / MY_EMP@SEL$1
+   8 - SEL$101C0EA9 / MY_EMP@SEL$1
+ 
+Predicate Information (identified by operation id):
+---------------------------------------------------
+ 
+   1 - access("DEPTNO"="DEPTNO")
+   6 - filter("MY_SAL_CAT"."CATEGORY"=1)
+   7 - access("SAL">="LOWEST_SAL" AND "SAL"<="HIGHEST_SAL")
+ 
+Column Projection Information (identified by operation id):
+-----------------------------------------------------------
+ 
+   1 - (#keys=1) "DNAME"[VARCHAR2,42]
+   2 - (rowset=256) "DEPTNO"[NUMBER,22], "DNAME"[VARCHAR2,42]
+   3 - "DEPTNO"[NUMBER,22]
+   4 - (#keys=0) "MY_EMP"."DEPTNO"[NUMBER,22]
+   5 - (#keys=0) "MY_EMP".ROWID[ROWID,10]
+   6 - "LOWEST_SAL"[NUMBER,22], "HIGHEST_SAL"[NUMBER,22]
+   7 - "MY_EMP".ROWID[ROWID,10]
+   8 - "MY_EMP"."DEPTNO"[NUMBER,22]
