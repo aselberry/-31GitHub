@@ -1,0 +1,8 @@
+Where does “Neural” comes from ?
+As you should know, a biological neuron is composed of multiple dendrites, a nucleus and a axon (if only you had paid attention in your biology classes). When a stimuli is sent to the brain, it is received through the synapse located at the extremity of the dendrite.
+
+When a stimuli arrives at the brain it is transmitted to the neuron via the synaptic receptors which adjust the strength of the signal sent to the nucleus. This message is transported by the dendrites to the nucleus to then be processed in combination with other signals emanating from other receptors on the other dendrites. Thus the combination of all these signals takes place in the nucleus. After processing all these signals, the nucleus will emit an output signal through its single axon. The axon will then stream this signal to several other downstream neurons via its axon terminations. Thus a neuron analysis is pushed in the subsequent layers of neurons. When you are confronted with the complexity and efficiency of this system, you can only imagine the millennia of biological evolution that brought us here.
+
+On the other hand, artificial neural networks are built on the principle of bio-mimicry. External stimuli (the data), whose signal strength is adjusted by the neuronal weights (remember the synapse?, circulates to the neuron (place where the mathematical calculation will happen) via the dendrites. The result of the calculation – called the output – is then re-transmitted (via the axon) to several other neurons and then subsequent layers are combined, and so on.
+
+Therefore, their is a clear parallel between biological neurons and artificial neural networks as presented in the figure below.
