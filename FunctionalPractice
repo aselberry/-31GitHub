@@ -1,0 +1,70 @@
+:: WaterAction = Shower | Faucet
+:: City = Budapest | Debrecen | Szeged
+:: CityRelation = Resident | Gardener
+
+:: Citizen = {id::Int, rel::CityRelation, city::City, waterActionTaken::WaterAction}
+
+/*
+In an eco-conscious city, Aquaville, citizens are being awarded rewards based on their efforts to reduce water consumption.
+The city officials want to know how many citizens were chosen from each city and how much reward they will get.
+
+Write a function that takes a list of citizens and returns a list of tuples of the form (City, count, TotalReward),
+where count is the number of citizens from that city who were chosen, and TotalReward is the total amount of reward allocated to that city.
+
+Reward is calculated as follows:
+    A resident who saved water in the shower gets 30000 HUF
+    A resident who saved water at the faucet gets 20000 HUF
+    A gardener who saved water in the shower gets 40000 HUF
+    A gardener who saved water at the faucet gets 30000 HUF
+*/
+
+// Some test data
+citizen1 = {id=1, rel=Resident, city=Budapest, waterActionTaken=Shower}
+citizen2 = {id=2, rel=Resident, city=Budapest, waterActionTaken=Faucet}
+citizen3 = {id=3, rel=Resident, city=Debrecen, waterActionTaken=Shower}
+citizen4 = {id=4, rel=Resident, city=Debrecen, waterActionTaken=Faucet}
+citizen5 = {id=5, rel=Resident, city=Szeged, waterActionTaken=Shower}
+citizen6 = {id=6, rel=Resident, city=Szeged, waterActionTaken=Faucet}
+citizen7 = {id=7, rel=Gardener, city=Budapest, waterActionTaken=Shower}
+citizen8 = {id=8, rel=Gardener, city=Budapest, waterActionTaken=Faucet}
+citizen9 = {id=9, rel=Gardener, city=Debrecen, waterActionTaken=Shower}
+citizen10 = {id=10, rel=Gardener, city=Debrecen, waterActionTaken=Faucet}
+citizen11 = {id=11, rel=Gardener, city=Szeged, waterActionTaken=Shower}
+citizen12 = {id=12, rel=Gardener, city=Szeged, waterActionTaken=Faucet}
+
+
+setValue :: Citizen -> Int
+setValue {rel = Resident, waterActionTaken=Shower} = 30000
+setValue {rel = Resident, waterActionTaken=Faucet} = 20000
+setValue {rel = Gardener, waterActionTaken=Shower} = 40000
+setValue {rel = Gardener, waterActionTaken=Faucet} = 30000
+
+//Start = setValue citizen7
+
+isFromBudapest :: Citizen -> Bool
+isFromBudapest {id=_, rel=_, city=Budapest, waterActionTaken=_} = True
+isFromBudapest _ = False
+
+isFromDebrecen :: Citizen -> Bool
+isFromDebrecen {id=_, rel=_, city=Debrecen, waterActionTaken=_} = True
+isFromDebrecen _ = False
+
+isFromSzeged :: Citizen -> Bool
+isFromSzeged {id=_, rel=_, city=Szeged, waterActionTaken=_} = True
+isFromSzeged _ = False
+
+city1 :: [Citizen] -> (City, Int, Int)
+city1 ls = (Budapest, length [1 \\ x <- ls | isFromBudapest x ], foldr (+) 0 [setValue x \\ x <- ls | isFromBudapest x])
+
+//Start = city1 [citizen1,citizen2,citizen3,citizen4,citizen5,citizen6,citizen7,citizen8,citizen9,citizen10,citizen11,citizen12]
+
+city2 :: [Citizen] -> (City, Int, Int)
+city2 ls = (Debrecen, length [1 \\ x <- ls | isFromDebrecen x ], foldr (+) 0 [setValue x \\ x <- ls | isFromDebrecen x])
+
+city3 :: [Citizen] -> (City, Int, Int)
+city3 ls = (Szeged, length [1 \\ x <- ls | isFromSzeged x ], foldr (+) 0 [setValue x \\ x <- ls | isFromSzeged x])
+
+//Start = city2 [citizen1,citizen2,citizen3,citizen4,citizen5,citizen6,citizen7,citizen8,citizen9,citizen10,citizen11,citizen12]
+
+AwardReward :: [Citizen] -> [(City, Int, Int)]
+AwardReward ls = [city1 ls, city2 ls, city3 ls]
