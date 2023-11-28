@@ -1,0 +1,173 @@
+%
+
+ForEach-Object
+
+Performs an operation against each item in a collection of input objects.
+
+?
+
+Where-Object
+
+Selects objects from a collection based on their property values.
+
+ac
+
+Add-Content
+
+Appends content, such as words or data, to a file.
+
+asnp
+
+Add-PSSnapIn
+
+Adds one or more Windows PowerShell snap-ins to the current session.
+
+cat
+
+Get-Content
+
+Gets the contents of a file.
+
+cd
+
+Set-Location
+
+Sets the current working location to a specified location.
+
+chdir
+
+Set-Location
+
+Sets the current working location to a specified location.
+
+clc
+
+Clear-Content
+
+Deletes the contents of an item, but does not delete the item.
+
+clear
+
+Clear-Host
+
+Clears the display in the host program.
+
+clhy
+
+Clear-History
+
+Deletes entries from the command history.
+
+cli
+
+Clear-Item
+
+Deletes the contents of an item, but does not delete the item.
+
+clp
+
+Clear-ItemProperty
+
+Deletes the value of a property but does not delete the property.
+
+cls
+
+Clear-Host
+
+Clears the display in the host program.
+
+clv
+
+Clear-Variable
+
+Deletes the value of a variable.
+
+cnsn
+
+Connect-PSSession
+
+Reconnects to disconnected sessions
+
+compare
+
+Compare-Object
+
+Compares two sets of objects.
+
+copy
+
+Copy-Item
+
+Copies an item from one location to another.
+
+cp
+
+Copy-Item
+
+Copies an item from one location to another.
+
+cpi
+
+Copy-Item
+
+Copies an item from one location to another.
+
+cpp
+
+Copy-ItemProperty
+
+Copies a property and value from a specified location to another location.
+
+curl
+
+Invoke-WebRequest
+
+Gets content from a webpage on the Internet.
+
+cvpa
+
+Convert-Path
+
+Converts a path from a Windows PowerShell path to a Windows PowerShell provider path.
+
+dbp
+
+Disable-PSBreakpoint
+
+Disables the breakpoints in the current console.
+
+del
+
+Remove-Item
+
+Deletes files and folders.
+
+diff
+
+Compare-Object
+
+Compares two sets of objects.
+
+dir
+
+Get-ChildItem
+
+Gets the files and folders in a file system drive.
+
+dnsn
+
+Disconnect-PSSession
+
+Disconnects from a session.
+
+ebp
+
+Enable-PSBreakpoint
+
+Enables the breakpoints in the current console.
+
+echo
+
+Write-Output
+
+Sends the specified objects to the next command in the pipeline. If the command is the last command in the pipeline, the objects are displayed in the console.
