@@ -1,0 +1,21 @@
+I discovered new algorithm called **Chebyshev** distance. It helps to determine the minimum distance needed to reach 
+from one point to another in the 2D plane. So, the basic algorithm is to choose the maximum of the absolute value of 
+the difference of the respective coordinates of the points. For example, subtract x form x and y from y. So the general 
+pseudocode to this algorithm is the following: 
+
+`maximum(abs (x1 - x2), abs (y1 - y2))`
+
+There is also another nice distance called **Manhattan Distance.** 
+It is mostly used in machine learning and to determine how close one point to another, 
+thus determining the similarity of the objects. 
+
+The formula is: 
+
+`Distance = |x1 - x2| + |y1 - y2|`
+
+**Difference between Chebyshev and Manhattan:** 
+They both calculate the difference of two points. The main difference is Manhattan only considers the moves that can
+be either horizontal or vertical. It cannot calculate the path regarding the diagonal. So, it is mostly used in the 
+grid system where only horizontal and vertical moves are allowed. In the case of Chebyshev, it calculates the distance 
+of two points in the grid system regardless the moves, as it allows all of them: horizontal, vertical, and diagonal. 
+It is mostly used in the chess games.
