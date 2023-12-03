@@ -1,7 +1,7 @@
 I discovered new algorithm called **Chebyshev** distance. It helps to determine the minimum distance needed to reach 
 from one point to another in the 2D plane. So, the basic algorithm is to choose the maximum of the absolute value of 
 the difference of the respective coordinates of the points. For example, subtract x form x and y from y. So the general 
-pseudocode to this algorithm is the following: 
+pseudocode to this algorithm is the following:  
 
 `maximum(abs (x1 - x2), abs (y1 - y2))`
 
