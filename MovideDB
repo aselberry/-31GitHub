@@ -1,0 +1,95 @@
+import java.io.BufferedReader;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.Files;
+
+class Person {
+    String name;
+    int birthYear;
+
+    public Person(String name, int birthYear) {
+        this.name = name;
+        this.birthYear = birthYear;
+    }
+}
+
+class Movie {
+    String title;
+    String director;
+    int releaseYear;
+    int length; // in minutes
+    List<String> actors;
+
+    public Movie(String title, String director, int releaseYear, int length, List<String> actors) {
+        this.title = title;
+        this.director = director;
+        this.releaseYear = releaseYear;
+        this.length = length;
+        this.actors = actors;
+    }
+}
+
+class FileModifier {
+    public void modifyFile(Path filePath){
+        try {
+            String fileContent = Files.readString(filePath);
+            Files.writeString(filePath, fileContent);
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+}
+
+class DatabaseManager {
+    public static void listMovies(Path filePath){
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath.toFile()))) {
+           String line;
+           String[][] columns;
+
+           while ((line = reader.readLine()) != null){
+            columns = line.split(",");
+           }
+
+           for(int i=0; i < columns.length; i++){
+            System.out.print(columns[i][0] + " by " + columns[i][1] + " in " + columns[i][2] + " , " + columns[i][3]);
+           }
+
+        }
+
+
+    }
+}
+
+public class moviesNokia{
+    private static List<Person> people = new ArrayList<>();
+    private static List<Movie> movies = new ArrayList<>();
+
+    public static void main(String[] args) {
+        // Initialize your database here (optional)
+        // Connect to a real database if needed
+        String filepath = "./file.txt";
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath.toFile()))) {
+            System.out.println("Console App has been connected to DataBase Successfully!");
+
+            String line;
+            while((line = bufferedReader.readLine()) != null){
+                System.out.println(line);
+            }
+            bufferedReader.close();
+        } catch (IOException e){
+            e.printStackTrace();
+            System.err.println("Error opening the file: " + e.getMessage());
+
+            System.exit(1); 
+        
+        }
+
+    }
+}
