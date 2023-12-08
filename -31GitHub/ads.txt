@@ -1,0 +1,13 @@
+∀v ∈ G.A(u)
+❆❆
+
+d(v) = ∞ ✁✁
+d(v) := d(u) + 1
+π(v) := u
+shortest(u) = 1 + shortset(u)
+[color(v) := grey]
+Q.add(v)
+if(color(u) != black)
+
+
+[color(u) := black]
