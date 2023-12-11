@@ -1,0 +1,4 @@
+
+Insert :: (LinkedList String) String -> (LinkedList String)
+Insert Nil s = Pointer s (Nil)
+Insert (Pointer val linkedList) s = Pointer s (Pointer val linkedList) 
